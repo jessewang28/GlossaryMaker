@@ -12,7 +12,11 @@ public class DocumentGlossary extends ArrayList<GlossaryEntry> {
         super(size);
     }
 
-    //public void addWord(String word, int num){ }
+    public void addWord(String word, int num){
+        int x = foundOrInserted(word);
+        numsList.add(num);
+    }
+
 
     private int foundOrInserted(String word){
         for (int i=0; i<size(); i++){
@@ -21,12 +25,18 @@ public class DocumentGlossary extends ArrayList<GlossaryEntry> {
                 return indexOf(get(i).getWord());
             }
             else if (x>0){
-                 this.add()
+                GlossaryEntry ge = new GlossaryEntry(word);
+                this.add(i, ge);
+                return i;
+            }
+            else if (x<0 && i==size()){
+                GlossaryEntry ge = new GlossaryEntry(word);
+                this.add(i, ge);
+                return size();
             }
         }
         return 0;
     }
-
 
 
 }
