@@ -43,11 +43,11 @@ public class GlossaryMaker
 
         // Create index:
 
-        //DocumentGlossary index = new DocumentGlossary();
+        DocumentGlossary index = new DocumentGlossary();
 
         String line;
         int lineNum = 0;
-        while ((line = inputFile.readLine()) != null)
+        //while ((line = inputFile.readLine()) != null)
         {
             lineNum++;
             //index.addAllWords(line, lineNum);

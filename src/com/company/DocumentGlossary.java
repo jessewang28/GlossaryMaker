@@ -14,8 +14,9 @@ public class DocumentGlossary extends ArrayList<GlossaryEntry> {
 
     public void addWord(String word, int num){
         int x = foundOrInserted(word);
-        numsList.add(num);
+        this.get(x).add(num);
     }
+
 
 
     private int foundOrInserted(String word){
