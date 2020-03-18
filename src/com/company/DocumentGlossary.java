@@ -4,6 +4,7 @@ import javax.swing.text.Document;
 import java.util.ArrayList;
 
 public class DocumentGlossary extends ArrayList<GlossaryEntry> {
+
     public DocumentGlossary(){
         super();
     }
@@ -17,7 +18,14 @@ public class DocumentGlossary extends ArrayList<GlossaryEntry> {
         this.get(x).add(num);
     }
 
+    public void addAllWords(String str, int num){
+        String [] s = str.split(“\\W+”);
+        for (String x: s){
+            addWord(x,num);
+        }
 
+
+    }
 
     private int foundOrInserted(String word){
         for (int i=0; i<size(); i++){
